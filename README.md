@@ -40,12 +40,36 @@ brew services stop zookeeper
 
 ## Usage
 
-### create Topic
+### create
 
 ```bash
-# kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic <topic_name>
+# kafka-topics --create --zookeeper <host>:<port> --replication-factor 1 --partitions 1 --topic <topic_name>
 # EX:
 kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+```
+
+### delete
+
+```bash
+# kafka-topics --delete --zookeeper <host>:<port> --topic <topic_name>
+# EX:
+kafka-topics --delete --zookeeper localhost:2181 --topic test
+```
+
+### describe
+
+```bash
+# kafka-topics --describe --zookeeper <host><port> --topic <topic_name>
+# EX:
+kafka-topics --describe --zookeeper localhost:2181 --topic test
+```
+
+### list
+
+```bash
+# kafka-topics --list --zookeeper ${host}:${port}
+# EX:
+kafka-topics --list --zookeeper localhost:2181
 ```
 
 ### producer
